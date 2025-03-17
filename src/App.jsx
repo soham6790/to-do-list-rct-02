@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import './App.css'
 import { TodoProvider } from './contexts';
+import { ToDo } from './components';
 
 function App() {
 
@@ -46,6 +47,9 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
+            {todos.map((todo) =>{
+              return <div key={todo.id} className='w-full'><ToDo/></div>
+            })}
           </div>
         </div>
       </div>
